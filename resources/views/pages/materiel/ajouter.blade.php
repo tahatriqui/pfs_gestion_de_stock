@@ -25,16 +25,16 @@
 
             <div class="mb-3">
                 <label for="ref" class="form-label">reference</label>
-                <input value="{{ old('ref') }}" type="text" name="ref" class="form-control border border-dark w-25 p-2"
-                    id="ref">
+                <input autofocus placeholder="ajouter une reference" value="{{ old('ref') }}" type="text" name="ref"
+                    class="form-control border border-dark w-25 p-2" id="ref">
                 @error('ref')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="mb-3">
                 <label for="services_tag" class="form-label">services tag</label>
-                <input value="{{ old('services_tag') }}" type="text" name="services_tag" class="form-control border border-dark w-25 p-2"
-                    id="services_tag">
+                <input placeholder="ajouter une services tag" value="{{ old('services_tag') }}" type="text" name="services_tag"
+                    class="form-control border border-dark w-25 p-2" id="services_tag">
                 @error('services_tag')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -42,8 +42,8 @@
 
             <div class="mb-3">
                 <label for="code_barre" class="form-label">code barre</label>
-                <input value="{{ old('code_barre') }}" type="text" name="code_barre" class="form-control border border-dark w-25 p-2"
-                    id="code_barre">
+                <input placeholder="ajouter un code barre" value="{{ old('code_barre') }}" type="text" name="code_barre"
+                    class="form-control border border-dark w-25 p-2" id="code_barre">
                 @error('code_barre')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -51,16 +51,16 @@
 
             <div class="mb-3">
                 <label for="configue" class="form-label">configue</label>
-                <input value="{{ old('configue') }}" type="text" name="configue" class="form-control border border-dark w-25 p-2"
-                    id="configue">
+                <input placeholder="ajouter une configue" value="{{ old('configue') }}" type="text" name="configue"
+                    class="form-control border border-dark w-25 p-2" id="configue">
                 @error('code_barre')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="date" class="form-label">ajouter la date</label>
-                <input type="date" name="date" class="form-control border border-dark w-25 p-2" id="date">
+                <label for="date" class="form-label"> la date</label>
+                <input placeholder="ajouter la date" type="date" name="date" class="form-control border border-dark w-25 p-2" id="date">
                 @error('date')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
@@ -124,12 +124,12 @@
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-            </div>
-            <button type="submit" class=" ms-5 w-10 btn btn-primary">Ajouter </button>
+            <button type="submit" class="  w-10 btn btn-primary">Ajouter</button> <a href="{{ route('materiel.index') }}"
+                class="btn btn-success ms-3"><i class="material-icons opacity-10">arrow_back</i></a>
         </form>
     </section>
     <script>
-    // Declare division_id outside of the functions
+        // Declare division_id outside of the functions
         let division_id;
 
         const divisionSelect = document.querySelector('.division');

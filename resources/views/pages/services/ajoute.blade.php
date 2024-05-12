@@ -10,7 +10,7 @@
     @csrf
     <div class="mb-3">
       <label for="service" class="form-label">Service</label>
-      <input  type="text" name="service" class="form-control border border-dark w-25 p-2" id="service" >
+      <input autofocus placeholder="ajouter un service" type="text" name="service" class="form-control border border-dark w-25 p-2" id="service" >
       @error("service")
             <small class="text-danger">{{ $message }} <i  class="fa-solid fa-circle-exclamation"></i></small>
       @enderror
@@ -18,7 +18,7 @@
 
     <div class="mb-3">
         <label for="bureau" class="form-label">bureau</label>
-        <input  type="text" name="bureau" class="form-control border border-dark w-25 p-2" id="bureau" >
+        <input placeholder="ajouter un bureau" type="text" name="bureau" class="form-control border border-dark w-25 p-2" id="bureau" >
             @error("bureau")
             <small class="text-danger">{{ $message }} <i  class="fa-solid fa-circle-exclamation"></i></small>
             @enderror
@@ -37,7 +37,9 @@
             <small class="text-danger d-block">{{ $message }} <i  class="fa-solid fa-circle-exclamation"></i></small>
             @enderror
       </div>
-    <button type="submit" class="btn btn-primary">Ajouter</button>
+    <button type="submit" class="btn btn-primary">Ajouter</button><a
+    href="{{ route('services.index') }}" class="btn btn-success ms-3"><i
+        class="material-icons opacity-10">arrow_back</i></a>
   </form>
 
 </section>

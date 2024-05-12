@@ -157,8 +157,8 @@
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
-            </div>
-            <button type="submit" class="ms-5 w-10 btn btn-primary">Modifier</button>
+            <button type="submit" class="  w-10 btn btn-primary">Modifier</button> <a href="{{ route('materiel.index') }}"
+                class="btn btn-success ms-3"><i class="material-icons opacity-10">arrow_back</i></a>
         </form>
     </section>
     <script>

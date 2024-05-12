@@ -9,12 +9,14 @@
         @csrf
         <div class="mb-3">
         <label for="division" class="form-label">Division</label>
-        <input value="{{ $division->name }}"  type="text" name="division" class="form-control border border-dark w-25 p-2" id="division " >
+        <input autofocus value="{{ $division->name }}"  type="text" name="division" class="form-control border border-dark w-25 p-2" id="division " >
         @error('division')
         <div class="text-danger">{{ $message }}</div>
         @enderror
         </div>
-        <button type="submit" class="btn btn-primary">Modifier division</button>
+        <button type="submit" class="btn btn-primary">Modifier division</button><a
+        href="{{ route('divisions.index') }}" class="btn btn-success ms-3"><i
+            class="material-icons opacity-10">arrow_back</i></a>
     </form>
 </section>
 

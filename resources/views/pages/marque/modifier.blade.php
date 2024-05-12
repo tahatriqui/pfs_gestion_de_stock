@@ -10,12 +10,13 @@
                 @csrf
                 <div class="mb-3">
                 <label for="marque" class="form-label">Etat</label>
-                <input value="{{$marque->marque}}" type="text" name="marque" class="form-control border border-dark w-25 p-2" id="marque" >
+                <input autofocus value="{{$marque->marque}}" type="text" name="marque" class="form-control border border-dark w-25 p-2" id="marque" >
                 @error('marque')
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
                 </div>
-                <button type="submit" class="btn btn-primary">modifier</button>
+                <button type="submit" class="btn btn-primary">modifier</button><a href="{{ route('marque.index') }}"
+                class="btn btn-success ms-3"><i class="material-icons opacity-10">arrow_back</i></a>
             </form>
         </section>
 
