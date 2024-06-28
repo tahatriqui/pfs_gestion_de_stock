@@ -72,11 +72,11 @@
                 }
             </script>
 
-            <div class="row justify-content-end px-4 mb-3">
+            <div class="w-20 row justify-content-end px-4 mb-3">
                 <a href="{{ route('user') }}" class="btn btn-primary">Ajouter un utilisateur</a>
             </div>
 
 
 
-            
+
         @endsection

@@ -21,8 +21,8 @@
 
                                     <th class="text-uppercase text-dark font-weight-bold opacity-7">#</th>
                                     <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2">La marque</th>
-                                    <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2">services tag</th>
-                                    <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2">code barre</th>
+                                    <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2">reference</th>
+
                                     <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2">la configuration
                                         </th>
                                 </tr>
@@ -33,9 +33,9 @@
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ $materiel->marque->marque }}</td>
-                                        <td>{{ $materiel->services_tag }}</td>
-                                        <td>{{ $materiel->code_barre }}</td>
+                                        <td>{{ $materiel->ref }}</td>
                                         <td>{{ $materiel->configue }}</td>
+
                                     </tr>
                                 @empty
                                     <tr>

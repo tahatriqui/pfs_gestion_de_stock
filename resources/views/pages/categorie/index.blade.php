@@ -5,6 +5,34 @@
 @section('content')
     <div class="row">
         <div class="col-12">
+                @if (session('suc'))
+                <div  class="alert alert-success alert-dismissible fade show w-30 position-fixed top-0  translate-middle-x" role="alert" id="autoCloseAlert">
+                    <div class="alert-message">
+                        <strong class="text-white">{{session('suc')}}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                            <i class="material-icons">close</i>
+                        </button>
+                    </div>
+                </div>
+                @elseif (session('sup'))
+                <div class="alert alert-danger alert-dismissible fade show w-30 position-fixed top-0 translate-middle-x" role="alert" id="autoCloseAlert">
+                    <div class="alert-message">
+                        <strong class="text-white">{{session('sup')}}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                            <i class="material-icons">close</i>
+                        </button>
+                    </div>
+                </div>
+                @elseif (session('mod'))
+                <div  class="alert alert-secondary alert-dismissible fade show ms-5 w-30 position-fixed top-0  translate-middle-x" role="alert" id="autoCloseAlert">
+                    <div class="alert-message">
+                        <strong class="text-white">{{session('mod')}}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                            <i class="material-icons">close</i>
+                        </button>
+                    </div>
+                </div>
+                @endif
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                     <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
@@ -62,7 +90,7 @@
         }
     </script>
 
-    <div class="row justify-content-end px-4 mb-3">
+    <div class=" w-20 row justify-content-end px-4 mb-3">
         <a href="{{ route('categorie.ajouter') }}" class="btn btn-primary">Ajouter une categorie</a>
     </div>
 

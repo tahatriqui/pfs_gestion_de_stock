@@ -61,14 +61,43 @@
         <hr class="horizontal light mt-0 mb-2">
         <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
             <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class=" @yield("div") nav-link text-white " href=" {{ route('divisions.index') }}">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">view_module</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Les divisions</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="@yield("ser") nav-link text-white " href=" {{ route('services.index') }}">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">info</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Les services</span>
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link text-white @yield("util")" href="{{ route('show.user') }}">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">person</i>
                         </div>
-                        <span class="nav-link-text ms-1">Les utilisateur</span>
+                        <span class="nav-link-text ms-1">Les utilisateurs</span>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class=" @yield("etat") nav-link text-white " href=" {{ route('etat.index') }}">
+                        <div class="text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">check_circle</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Les etats</span>
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a class="@yield("cat") nav-link text-white" href="{{ route('categorie.index') }}">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -79,54 +108,35 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class=" @yield("etat") nav-link text-white " href="{{ route('etat.index') }}">
-                        <div   text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">check_circle</i>
-                        </div>
-                        <span class="nav-link-text ms-1">Les etats</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class= "@yield("ser") nav-link text-white " href="{{ route('services.index') }}">
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">info</i>
-                        </div>
-                        <span class="nav-link-text ms-1">Les service</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class=" @yield("div") nav-link text-white " href="{{ route('divisions.index') }}">
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">view_module</i>
-                        </div>
-                        <span class="nav-link-text ms-1">Les divisions</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
                     <a class=" @yield('mat') nav-link text-white " href="{{ route('materiel.index') }}">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">widgets</i>
                         </div>
                         <span class="nav-link-text ms-1">Les materiels</span>
                     </a>
-
                 </li>
+
                 <li class="nav-item">
                     <a class="@yield("mar") nav-link text-white " href="{{ route('marque.index') }}">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">label</i>
                         </div>
-                        <span class="nav-link-text ms-1">Les marque</span>
+                        <span class="nav-link-text ms-1">Les marques</span>
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="@yield("aff") nav-link text-white " href="{{ route('affectation.index') }}">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons">list_alt</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Les affectiations</span>
+                    </a>
+                </li>
 
             </ul>
         </div>
     </aside>
-
-
     {{-- content --}}
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <div class="container-fluid py-4">
@@ -153,7 +163,19 @@
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{asset('assets/js/material-dashboard.min.js?v=3.0.0')}}"></script>
 
-
+  <script>
+        // Set a timer to close the alert after 5 seconds (5000 milliseconds)
+        setTimeout(function() {
+            var alert = document.getElementById('autoCloseAlert');
+            if (alert) {
+                alert.classList.add('fade-out');
+                setTimeout(function() {
+                    var bsAlert = new bootstrap.Alert(alert);
+                    bsAlert.close();
+                }, 1000); // Match this timeout to the CSS transition duration
+            }
+        }, 3000);
+    </script>
 </body>
 
 </html>

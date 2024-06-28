@@ -13,7 +13,7 @@ class Etat extends Model
 
     public function materiel()
     {
-        return $this->belongsTo(Materiel::class);
+        return $this->belongsTo(Materiel::class,"materiel_id");
     }
     public $fillable = ['etats'];
 }

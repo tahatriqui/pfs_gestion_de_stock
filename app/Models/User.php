@@ -18,4 +18,9 @@ class User extends Model
     {
     return $this->belongsTo(Division::class, 'divisions_id');
     }
+
+    public function affectation()
+    {
+    return $this->hasMany(Affectation::class);
+    }
 }

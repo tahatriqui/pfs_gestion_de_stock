@@ -39,28 +39,20 @@
             </div>
 
             <div class="mb-3">
-                <label for="services_tag" class="form-label">services tag</label>
-                <input value="{{ $materiel->services_tag }}" type="text" name="services_tag"
-                    class="form-control border border-dark w-25 p-2" id="services_tag">
-                @error('services_tag')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="mb-3">
-                <label for="code_barre" class="form-label">code barre</label>
-                <input value='{{ $materiel->code_barre }}' type="text" name="code_barre"
-                    class="form-control border border-dark w-25 p-2" id="code_barre">
-                @error('code_barre')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="mb-3">
                 <label for="configue" class="form-label">configue</label>
                 <input value='{{ $materiel->configue }}' type="text" name="configue"
                     class="form-control border border-dark w-25 p-2" id="configue">
                 @error('code_barre')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
+
+            <div class="mb-3">
+                <label for="configue" class="form-label">quantité</label>
+                <input value='{{ $materiel->quant }}' type="text" name="quant"
+                    class="form-control border border-dark w-25 p-2" id="quant">
+                @error('quant')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
@@ -89,43 +81,9 @@
                 @error('etat')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
+            </div>
 
-
-                <select class="division form-select border-dark w-15 ps-2 d-inline" name="division">
-                    <option disabled> choisit une division</option>
-                    @forelse ($divisions as $division)
-                        @if ($division->id == $materiel->divisions_id)
-                            <option selected value="{{ $division->id }}">{{ $division->name }}</option>
-                        @else
-                            <option value="{{ $division->id }}">{{ $division->name }}</option>
-                        @endif
-
-                    @empty
-                    @endforelse
-                </select>
-                @error('division')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-
-                <br>
-                <select class="form-select border-dark w-15 me-3 ps-2 d-inline" name="service">
-                    <option selected disabled> choisit un service</option>
-                    @forelse ($services as $service)
-                        @if ($service->id == $materiel->services_id)
-                            <option name={{ $service->divisions_id }} value="{{ $service->id }}">
-                                {{ $service->services }}</option>
-                        @else
-                            <option name={{ $service->divisions_id }} value="{{ $service->id }}">
-                                {{ $service->services }}</option>
-                        @endif
-                    @empty
-                    @endforelse
-                </select>
-                @error('service')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-
-
+            <div class="mb-3">
                 <select class="form-select border-dark w-15 ps-2 d-inline mb-2" name="categorie">
                     <option selected disabled> choisit une categorie</option>
                     @forelse ($categories as $categorie)
@@ -140,25 +98,10 @@
                 @error('categorie')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
-                <br>
-
-                <select class="form-select border-dark w-15 ps-2" name="user">
-                    <option selected disabled> choisit un utilisateur</option>
-                    @forelse ($users as $user)
-                        @if ($user->id == $materiel->users_id)
-                            <option selected value="{{ $user->id }}">{{ $user->prenom . ' ' . $user->nom }}</option>
-                        @else
-                            <option value="{{ $user->id }}">{{ $user->prenom . ' ' . $user->nom }}</option>
-                        @endif
-                    @empty
-                    @endforelse
-                </select>
-                @error('user')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
             </div>
+
             <button type="submit" class="  w-10 btn btn-primary">Modifier</button> <a href="{{ route('materiel.index') }}"
-                class="btn btn-success ms-3"><i class="material-icons opacity-10">arrow_back</i></a>
+                class="btn btn-success ms-3"><i class="material-icons opacity-10">arrow_back</i></a></button>
         </form>
     </section>
     <script>

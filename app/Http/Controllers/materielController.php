@@ -34,15 +34,11 @@ class materielController extends Controller
     $request->validate([
         'marque' => 'required',
         'ref' => 'required',
-        'services_tag' => 'required',
-        'code_barre' => 'required',
         'configue' => 'required',
         'date' => 'required|date',
         'etat' => 'required',
-        'division' => 'required',
+        'quant' => 'required',
         'categorie' => 'required',
-        'service' => 'required',
-        'user' => 'required',
     ], [
         'required' => 'Le champ :attribute est requis.',
         'date' => 'Le champ :attribute doit être une date valide.',
@@ -51,14 +47,10 @@ class materielController extends Controller
     Materiel::insert([
         "marque_id"=>$request->marque,
         "ref"=>$request->ref,
-        "services_tag"=>$request->services_tag	,
-        "code_barre"=>$request->code_barre,
+       "quant"=>$request->quant,
         "configue"=>$request->configue,
         "la_date"=>$request->date,
         "etats_id"=>$request->etat,
-        "divisions_id"=>$request->division,
-        "services_id"=>$request->service,
-        "users_id"=>$request->user,
         "categories_id"=>$request->categorie,
     ]);
 
@@ -81,15 +73,11 @@ class materielController extends Controller
     $request->validate([
         'marque' => 'required',
         'ref' => 'required',
-        'services_tag' => 'required',
-        'code_barre' => 'required',
         'configue' => 'required',
         'date' => 'required|date',
         'etat' => 'required',
-        'division' => 'required',
+        'quant' => 'required',
         'categorie' => 'required',
-        'service' => 'required',
-        'user' => 'required',
     ], [
         'required' => 'Le champ :attribute est requis.',
         'date' => 'Le champ :attribute doit être une date valide.',
@@ -99,14 +87,10 @@ class materielController extends Controller
      Materiel::findOrFail($id)->update([
         "marque_id"=>$request->marque,
         "ref"=>$request->ref,
-        "services_tag"=>$request->services_tag	,
-        "code_barre"=>$request->code_barre,
+       "quant"=>$request->quant,
         "configue"=>$request->configue,
         "la_date"=>$request->date,
         "etats_id"=>$request->etat,
-        "divisions_id"=>$request->division,
-        "services_id"=>$request->service,
-        "users_id"=>$request->user,
         "categories_id"=>$request->categorie,
      ]);
 

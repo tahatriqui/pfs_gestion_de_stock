@@ -27,7 +27,7 @@ class categorieController extends Controller
         Category::insert([
             'categorie'=>$request->categorie
         ]);
-        return redirect()->route('categorie.index');
+        return redirect()->route('categorie.index')->with(["suc"=>"ajouter avec succeés"]);
     }
 
     //modification vue
@@ -44,7 +44,7 @@ class categorieController extends Controller
         Category::findOrFail($id)->update([
             'categorie'=>$request->categorie
             ]);
-        return redirect()->route('categorie.index');
+        return redirect()->route('categorie.index')->with(["mod"=>"modifier avec succes"]);
         }
 
     //delete function
@@ -52,7 +52,7 @@ class categorieController extends Controller
         Category::findOrFail($id)->delete();
         return redirect()->route('categorie.index');
     }
-    
+
     //filtre function
     public function filtre($id){
         $categorie = Category::findOrFail($id);

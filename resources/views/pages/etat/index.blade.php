@@ -18,7 +18,7 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    
+
                                     <th class="text-uppercase text-dark font-weight-bold opacity-7">#</th>
                                     <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2">La etat</th>
                                     <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2">Les actions</th>
@@ -71,7 +71,7 @@
         }
     </script>
 
-    <div class="row justify-content-end px-4 mb-3">
+    <div class="w-20 row justify-content-end px-4 mb-3">
         <a href="{{ route('etat.ajoutePage') }}" class="btn btn-primary">Ajouter une etat</a>
     </div>
 

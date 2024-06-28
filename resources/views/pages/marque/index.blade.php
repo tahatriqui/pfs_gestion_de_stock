@@ -56,7 +56,7 @@
     </div>
 
 
-    <div class="row justify-content-end px-4 mb-3">
+    <div class="w-20 row justify-content-end px-4 mb-3">
         <a href="{{ route('marque.ajoutePage') }}" class="btn btn-primary">Ajouter une marque</a>
     </div>
 

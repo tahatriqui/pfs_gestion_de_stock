@@ -593,5 +593,20 @@ License - nucleoapp.com/license/
   content: "\ea65";
 }
 
-
+.bg-gradient-primary {
+    background-image: linear-gradient(195deg, #910D2B 0%, #910D2B 100%) !important;
+}
+.shadow-primary {
+    box-shadow: 0 4px 20px 0 #910D2B, 0 7px 10px -10px #910D2B !important;
+}
+.fade-out {
+    opacity: 0 !important;
+    transition: opacity 1s ease-out;
+  }
+  #autoCloseAlert {
+      opacity: .9;
+    z-index: 1050 !important;
+    margin-left: 0 !important;
+    margin-top: 20px;/* Ensure it's higher than other content */
+  }
 /* all icon font classes list here */

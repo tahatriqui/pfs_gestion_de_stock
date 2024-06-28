@@ -17,24 +17,16 @@ class Materiel extends Model
     return $this->belongsTo(Etat::class, 'etats_id');
     }
 
-
-    public function user(){
-        return  $this->belongsTo(User::class,'users_id');
+    public function materiel(){
+    return $this->hasMany(Materiel::class);
     }
 
-    public function division(){
-       return $this->belongsTo(Division::class,'divisions_id');
-    }
-
-    public function service(){
-       return $this->belongsTo(Service::class,'services_id');
-    }
     public function marque(){
        return $this->belongsTo(Marque::class);
     }
     protected $casts = [
         'la_date' => 'date:Y-m-d',
     ];
-    public $fillable =['marque_id',"ref",'services_tag','code_barre',"configue","etats_id","divisions_id","services_id","users_id","categories_id","la_date"];
+    public $fillable =['marque_id',"ref","configue","etats_id","categories_id","la_date","quant"];
 
 }

@@ -22,24 +22,19 @@
                                         marques</th>
                                     <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2" scope="col">Les
                                         references</th>
-                                    <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2" scope="col">
-                                        service tag</th>
-                                    <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2" scope="col">code
-                                        barre</th>
                                     <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2" scope="col">La
                                         configuration</th>
                                     <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2" scope="col">
                                         L'etat</th>
                                     <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2" scope="col">La
                                         division</th>
-                                    <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2" scope="col">Le
-                                        service</th>
-                                    <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2" scope="col">Le
+                                        <th class="text-center text-uppercase text-dark font-weight-bold opacity-7">
+                                            la quantité</th>
+                                    <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2" scope="col">La
                                         category</th>
                                     <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2" scope="col">La
                                         date</th>
-                                    <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2" scope="col">
-                                        L'utilisateur</th>
+
                                     <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2" scope="col">
                                         expire</th>
                                     <th class="text-uppercase text-dark font-weight-bold opacity-7 ps-2">Les actions</th>
@@ -50,8 +45,6 @@
                                     <th scope="row">{{ $key + 1 }}</th>
                                     <td>{{ $materiel->marque->marque }}</td>
                                     <td>{{ $materiel->ref }}</td>
-                                    <td>{{ $materiel->services_tag }}</td>
-                                    <td>{{ $materiel->code_barre }}</td>
                                     <td>{{ $materiel->configue }}</td>
                                     <td>
                                         @isset($materiel->etat->etats)
@@ -60,7 +53,6 @@
                                             aucune
                                         @endisset
                                     </td>
-
                                     <td>
                                         @isset($materiel->division->name)
                                             {{ $materiel->division->name }}
@@ -68,18 +60,10 @@
                                             aucune
                                         @endisset
                                     </td>
-
-                                    <td>
-                                        @isset($materiel->service->services)
-                                            {{ $materiel->service->services }}
-                                        @else
-                                            aucune
-                                        @endisset
-                                    </td>
+                                    <td class="text-center text-dark">{{ $materiel->quant }}</td>
                                     <td>{{ $materiel->categories->categorie }}</td>
                                     <td>{{ $materiel->la_date->year . '-' . $materiel->la_date->month . '-' . $materiel->la_date->day }}
                                     </td>
-                                    <td>{{ $materiel->user->prenom . ' ' . $materiel->user->nom }} </td>
                                     <td>
                                         @if ($materiel->la_date->year + 5 <= $year)
                                             oui
@@ -114,7 +98,7 @@
 
 
 
-    <div class="row justify-content-end px-4 mb-3">
+    <div class="w-20 row justify-content-end px-4 mb-3">
         <a href="{{  route('materiel.ajouterPage') }}" class="btn btn-primary">Ajouter un materiel</a>
     </div>
 

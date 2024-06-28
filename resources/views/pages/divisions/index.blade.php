@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <div class="row justify-content-end  px-4 mb-3">
+    <div class="row justify-content-end w-20  px-4 mb-3">
         <a href="{{ route('division.ajouter') }}" class="btn btn-primary p-3">Ajouter une division</a>
     </div>
 
